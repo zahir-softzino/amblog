@@ -2,9 +2,11 @@
   <div v-if="error">
     {{ error }}
   </div>
-  <div v-if="post" class="post">
-    <h3>{{ post.title }}</h3>
+  <div v-if="post" class="details">
+    <h2>{{ post.title }}</h2>
     <p class="pre">{{ post.body }}</p>
+    <span v-for="tag in post.tags" :key="tag">#{{ tag }}</span>
+
   </div>
 </template>
 
@@ -24,15 +26,23 @@ export default {
 </script>
 
 <style>
-  .post{
+  .details{
     max-width: 1200px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
   }
-  .post p{
+  .details h2{
+    font-weight: 900;
+    font-size: 32px;
+    color: #3b394f;
+  }
+  .details p{
     color: #444;
     line-height: 1.5em;
     margin-top: 40px;
+    /* padding-bottom: 20px; */
   }
+  
+
   .pre{
     white-space: pre-wrap;
   }

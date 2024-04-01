@@ -24,5 +24,10 @@ export default {
 </script>
 
 <style>
-
+  .post{
+    padding-bottom: 30px;
+  }
+  .post a{
+    text-decoration: none;
+  }
 </style>
